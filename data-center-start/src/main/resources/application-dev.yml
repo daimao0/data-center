@@ -1,0 +1,6 @@
+spring:
+ datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql://42.192.17.48:3306/data-center
+   username: root
+   password: 627459859@Qq.com
