@@ -1,4 +1,4 @@
 /**
- * RPC 提供接口和网关定义
+ * 提供http和rpc接口和网关定义
  */
 package com.dm.api;

@@ -21,5 +21,25 @@
             <groupId>com.dm</groupId>
             <artifactId>data-center-trigger</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-app</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-infrastructure</artifactId>
+        </dependency>
     </dependencies>
 </project>

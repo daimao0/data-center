@@ -22,5 +22,9 @@
             <groupId>com.dm</groupId>
             <artifactId>data-center-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-api</artifactId>
+        </dependency>
     </dependencies>
 </project>

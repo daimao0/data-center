@@ -1,7 +1,7 @@
-package com.dm.dao.mapper;
+package com.dm.infrastructure.db.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dm.dao.po.DatasetPO;
+import com.dm.infrastructure.db.po.DatasetPO;
 
 /**
  * @author daimao

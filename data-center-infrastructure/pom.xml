@@ -23,6 +23,10 @@
             <artifactId>data-center-common</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>data-center-domain</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
         </dependency>

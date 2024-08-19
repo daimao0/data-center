@@ -1,10 +1,11 @@
-package com.dm.dao.po;
+package com.dm.infrastructure.db.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -17,6 +18,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
+@Data
 public class DatasetPO {
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
