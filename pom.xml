@@ -31,6 +31,8 @@
         <data-center-start.version>1.0-SNAPSHOT</data-center-start.version>
         <data-center-trigger.version>1.0-SNAPSHOT</data-center-trigger.version>
         <data-center-common.version>1.0-SNAPSHOT</data-center-common.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.2.0</springdoc-openapi-starter-webmvc-ui.version>
+        <cola-component-dto.version>4.3.2</cola-component-dto.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,24 +41,8 @@
         <druid-spring-boot-3-starter.version>1.2.20</druid-spring-boot-3-starter.version>
         <mysql-connector-java.version>8.0.33</mysql-connector-java.version>
         <lombok.version>1.18.24</lombok.version>
+        <fastjson.version>2.0.28</fastjson.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -96,6 +82,17 @@
                 <version>${data-center-common.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+            </dependency>
+            <!-- 让响应结果更美观 -->
+            <dependency>
+                <groupId>com.alibaba.cola</groupId>
+                <artifactId>cola-component-dto</artifactId>
+                <version>${cola-component-dto.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus-spring-boot3-starter.version}</version>
@@ -114,6 +111,11 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

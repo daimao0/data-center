@@ -9,52 +9,36 @@ import lombok.experimental.Accessors;
 import java.time.LocalDateTime;
 
 /**
- * 数据集表
- *
- * @author daimao
- * @date 2024/8/18 14:26
+ * SQL数据集
+ * @author: yanchenyang958@hellobike.com
+ * @date: 2024-08-20 16:34
  */
-@TableName(value = "t_dataset")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@Data
-public class DatasetPO {
+@TableName(value = "t_dataset_sql")
+public class DatasetSQLPO {
     /**
      * 主键id
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 数据集名称
+     * 数据集id
      */
-    @TableField(value = "name")
-    private String name;
+    @TableField(value = "dataset_id")
+    private String datasetId;
     /**
-     * 数据集类型：数据集类型：0、sql类型；1、csv;2、实时传输类型
+     * 数据集SQL
      */
-    @TableField(value = "dataset_type")
-    private Integer datasetType;
+    @TableField(value = "base_sql")
+    private String baseSQL;
     /**
-     * 状态：0、未上线；1、已上线；2、编辑中（已上线）
-     */
-    @TableField(value = "status")
-    private Integer status;
-    /**
-     * 当前版本号
+     * 数据集版本号
      */
     @TableField(value = "version")
     private Integer version;
-    /**
-     * 创建人
-     */
-    @TableField(value = "creator")
-    private String creator;
-    /**
-     * 管理员
-     */
-    @TableField(value = "managers")
-    private String managers;
     /**
      * 创建时间
      */
@@ -69,6 +53,6 @@ public class DatasetPO {
      * 删除时间
      */
     @TableField(value = "deleted_at")
-    @TableLogic(value = "null",delval = "now()")
+    @TableLogic
     private LocalDateTime deletedAt;
 }

@@ -1,6 +1,6 @@
 package com.dm.infrastructure.db.repository.impl;
 
-import com.dm.domain.dataset.model.entity.DatasetEntity;
+import com.dm.domain.dataset.model.DatasetDO;
 import com.dm.domain.dataset.repository.DatasetRepository;
 import com.dm.infrastructure.convert.DatasetConvert;
 import com.dm.infrastructure.db.mapper.DatasetMapper;
@@ -18,8 +18,19 @@ public class DatasetRepositoryImpl implements DatasetRepository {
     private DatasetMapper datasetMapper;
 
     @Override
-    public DatasetEntity findById(Long id) {
+    public DatasetDO findById(Long id) {
         DatasetPO datasetPO = datasetMapper.selectById(id);
         return DatasetConvert.toDataset(datasetPO);
+    }
+
+    /**
+     * 数据集保存
+     *
+     * @param datasetDO 数据集领域
+     */
+    @Override
+    public void save(DatasetDO datasetDO) {
+        DatasetPO datasetPO = DatasetConvert.toDatasetPO(datasetDO);
+        datasetMapper.insert(datasetPO);
     }
 }

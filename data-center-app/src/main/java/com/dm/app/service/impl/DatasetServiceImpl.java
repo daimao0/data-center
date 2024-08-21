@@ -1,9 +1,10 @@
 package com.dm.app.service.impl;
 
+import com.dm.api.command.DatasetSaveCmd;
 import com.dm.api.http.DatasetService;
 import com.dm.api.vo.DatasetVO;
 import com.dm.app.convert.DatasetConvert;
-import com.dm.domain.dataset.model.entity.DatasetEntity;
+import com.dm.domain.dataset.model.DatasetDO;
 import com.dm.domain.dataset.repository.DatasetRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,20 @@ public class DatasetServiceImpl implements DatasetService {
      */
     @Override
     public DatasetVO getById(Long id) {
-        DatasetEntity datasetEntity = datasetRepository.findById(id);
-        return DatasetConvert.toDatasetVO(datasetEntity);
+        DatasetDO datasetDO = datasetRepository.findById(id);
+        return DatasetConvert.toDatasetVO(datasetDO);
     }
+
+    /**
+     * 保存数据集
+     *
+     * @param datasetSaveCmd 数据集保存参数
+     */
+    @Override
+    public void save(DatasetSaveCmd datasetSaveCmd) {
+        DatasetDO datasetDO = DatasetConvert.toDatasetDO(datasetSaveCmd);
+        datasetRepository.save(datasetDO);
+    }
+
+
 }

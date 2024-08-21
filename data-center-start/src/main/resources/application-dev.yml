@@ -4,3 +4,16 @@ spring:
    url: jdbc:mysql://42.192.17.48:3306/data-center
    username: root
    password: 627459859@Qq.com
+
+springdoc:
+  api-docs:
+    enabled: true # 开启OpenApi接口
+    path: /data-center/v1/api-docs  # 自定义路径，默认为 "/v3/api-docs"
+  swagger-ui:
+    enabled: true # 开启swagger界面，依赖OpenApi，需要OpenApi同时开启
+    path: /data-center/swagger-ui/index.html # 自定义路径，默认为"/swagger-ui/index.html"
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted_at
