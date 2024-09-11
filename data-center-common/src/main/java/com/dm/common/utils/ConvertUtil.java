@@ -32,4 +32,24 @@ public class ConvertUtil {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
         return LocalDateTime.parse(datetimeStr, dateTimeFormatter);
     }
+
+    /**
+     * 本地时间转字符串
+      * @param localDateTime 本地时间
+     * @return 字符串
+     */
+    public static String toStr(LocalDateTime localDateTime){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
+        return dateTimeFormatter.format(localDateTime);
+    }
+    /**
+     * 本地时间转字符串
+     * @param localDateTime 本地时间
+     * @param format 时间格式
+     * @return 字符串
+     */
+    public static String toStr(LocalDateTime localDateTime,String format){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
+        return dateTimeFormatter.format(localDateTime);
+    }
 }

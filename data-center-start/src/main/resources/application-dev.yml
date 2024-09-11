@@ -17,3 +17,7 @@ mybatis-plus:
   global-config:
     db-config:
       logic-delete-field: deleted_at
+
+data:
+  storage:
+    rootPath: /Users/yanchenyang17958/Desktop/work/data

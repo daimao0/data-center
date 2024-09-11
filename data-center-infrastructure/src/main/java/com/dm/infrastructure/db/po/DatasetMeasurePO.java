@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  * 数据集度量表
+ *
  * @author: yanchenyang958@hellobike.com
  * @date: 2024-08-20 17:10
  */
@@ -25,20 +26,25 @@ public class DatasetMeasurePO {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
+     * 数据集id
+     */
+    @TableField(value = "dataset_id")
+    private Long datasetId;
+    /**
      * 英文名
      */
     @TableField(value = "en_name")
     private String enName;
     /**
-     * 中文名
+     * 显示名称
      */
-    @TableField(value = "cn_name")
-    private String cnName;
+    @TableField(value = "display_name")
+    private String displayName;
     /**
-     * 数据集id
+     * 度量类型
      */
-    @TableField(value = "dataset_id")
-    private Integer datasetId;
+    @TableField(value = "measure_type")
+    private String measureType;
     /**
      * 版本号
      */
@@ -58,6 +64,6 @@ public class DatasetMeasurePO {
      * 删除时间
      */
     @TableField(value = "deleted_at")
-    @TableLogic
+    @TableLogic(value = "null", delval = "now()")
     private LocalDateTime deletedAt;
 }

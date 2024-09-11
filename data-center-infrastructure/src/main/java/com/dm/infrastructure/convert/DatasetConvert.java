@@ -1,7 +1,6 @@
 package com.dm.infrastructure.convert;
 
 import com.dm.common.enums.DatasetStatus;
-import com.dm.common.enums.DatasetType;
 import com.dm.domain.dataset.model.DatasetDO;
 import com.dm.infrastructure.db.po.DatasetPO;
 
@@ -18,11 +17,8 @@ public class DatasetConvert {
         return new DatasetDO()
                 .setId(datasetPO.getId())
                 .setName(datasetPO.getName())
-                .setDatasetType(DatasetType.get(datasetPO.getDatasetType()))
                 .setDatasetStatus(DatasetStatus.get(datasetPO.getStatus()))
                 .setVersion(datasetPO.getVersion())
-                .setManagers(datasetPO.getManagers())
-                .setCreator(datasetPO.getCreator())
                 .setCreatedAt(datasetPO.getCreatedAt())
                 .setUpdatedAt(datasetPO.getUpdatedAt());
     }
@@ -36,11 +32,8 @@ public class DatasetConvert {
        return new DatasetPO()
                .setId(datasetDO.getId())
                .setName(datasetDO.getName())
-               .setDatasetType(datasetDO.getDatasetType().getCode())
                .setStatus(datasetDO.getDatasetStatus().getCode())
                .setVersion(datasetDO.getVersion())
-               .setManagers(datasetDO.getManagers())
-               .setCreator(datasetDO.getCreator())
                .setCreatedAt(datasetDO.getCreatedAt())
                .setUpdatedAt(datasetDO.getUpdatedAt());
     }

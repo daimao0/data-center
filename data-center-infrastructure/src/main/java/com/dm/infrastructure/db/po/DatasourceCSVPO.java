@@ -9,36 +9,32 @@ import lombok.experimental.Accessors;
 import java.time.LocalDateTime;
 
 /**
- * SQL数据集
+ * 数据源csv
+ *
  * @author: yanchenyang958@hellobike.com
- * @date: 2024-08-20 16:34
+ * @date: 2024-09-10 21:19
  */
-@Data
+@TableName(value = "t_datasource_csv")
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName(value = "t_dataset_sql")
-public class DatasetSQLPO {
+@Data
+public class DatasourceCSVPO {
     /**
      * 主键id
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 数据集id
+     * 数据源id
      */
-    @TableField(value = "dataset_id")
-    private String datasetId;
+    @TableField(value = "datasource_id")
+    private Long datasourceId;
     /**
-     * 数据集SQL
+     * 文件存储路径
      */
-    @TableField(value = "base_sql")
-    private String baseSQL;
-    /**
-     * 数据集版本号
-     */
-    @TableField(value = "version")
-    private Integer version;
+    @TableField(value = "path")
+    private String path;
     /**
      * 创建时间
      */
@@ -53,6 +49,6 @@ public class DatasetSQLPO {
      * 删除时间
      */
     @TableField(value = "deleted_at")
-    @TableLogic
+    @TableLogic(value = "null", delval = "now()")
     private LocalDateTime deletedAt;
 }

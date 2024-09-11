@@ -32,5 +32,6 @@ public class DatasetRepositoryImpl implements DatasetRepository {
     public void save(DatasetDO datasetDO) {
         DatasetPO datasetPO = DatasetConvert.toDatasetPO(datasetDO);
         datasetMapper.insert(datasetPO);
+        datasetDO.setId(datasetPO.getId());
     }
 }

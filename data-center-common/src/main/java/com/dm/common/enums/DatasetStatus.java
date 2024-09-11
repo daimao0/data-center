@@ -13,13 +13,13 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum DatasetStatus {
-    OFFLINE(0, "未上线"),
-    ONLINE(1, "已上线"),
-    EDIT(2, "编辑中");
-    private final Integer code;
+    OFFLINE("offline", "未上线"),
+    ONLINE("online", "已上线"),
+    EDIT("editing", "编辑中");
+    private final String code;
     private final String desc;
 
-    public static DatasetStatus get(Integer code) {
+    public static DatasetStatus get(String code) {
         for (DatasetStatus value : DatasetStatus.values()) {
             if (value.getCode().equals(code)) {
                 return value;

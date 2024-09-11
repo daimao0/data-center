@@ -31,30 +31,15 @@ public class DatasetPO {
     @TableField(value = "name")
     private String name;
     /**
-     * 数据集类型：数据集类型：0、sql类型；1、csv;2、实时传输类型
-     */
-    @TableField(value = "dataset_type")
-    private Integer datasetType;
-    /**
-     * 状态：0、未上线；1、已上线；2、编辑中（已上线）
+     * 状态：offline、未上线；online、已上线；editing、编辑中（已上线）
      */
     @TableField(value = "status")
-    private Integer status;
+    private String status;
     /**
      * 当前版本号
      */
     @TableField(value = "version")
     private Integer version;
-    /**
-     * 创建人
-     */
-    @TableField(value = "creator")
-    private String creator;
-    /**
-     * 管理员
-     */
-    @TableField(value = "managers")
-    private String managers;
     /**
      * 创建时间
      */

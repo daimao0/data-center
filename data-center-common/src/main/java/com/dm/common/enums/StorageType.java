@@ -4,21 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * 数据集类型
+ * 存储类型
  *
  * @author: yanchenyang958@hellobike.com
- * @date: 2024-08-20 20:54
+ * @date: 2024-09-04 17:13
  */
 @Getter
 @AllArgsConstructor
-public enum DatasetType {
-    SQL(0, "sql数据集"),
-    CSV(1, "csv数据集");
-    private final Integer code;
+public enum StorageType {
+    CSV("csv", "csv文件"),
+    MYSQL("mysql", "mysql");
+
+    private final String code;
+
     private final String desc;
 
-    public static DatasetType get(Integer code) {
-        for (DatasetType value : DatasetType.values()) {
+    public static StorageType get(String code) {
+        for (StorageType value : StorageType.values()) {
             if (value.getCode().equals(code)) {
                 return value;
             }

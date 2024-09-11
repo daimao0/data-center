@@ -26,20 +26,26 @@ public class DatasetDimPO {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
+     * 数据集id
+     */
+    @TableField(value = "dataset_id")
+    private Long datasetId;
+
+    /**
      * 英文名
      */
     @TableField(value = "en_name")
     private String enName;
     /**
-     * 中文名
+     * 显示名称
      */
-    @TableField(value = "cn_name")
-    private String cnName;
+    @TableField(value = "display_name")
+    private String displayName;
     /**
-     * 数据集id
+     * 维度类型
      */
-    @TableField(value = "dataset_id")
-    private Integer datasetId;
+    @TableField(value = "dim_type")
+    private String dimType;
     /**
      * 版本号
      */
@@ -59,6 +65,6 @@ public class DatasetDimPO {
      * 删除时间
      */
     @TableField(value = "deleted_at")
-    @TableLogic
+    @TableLogic(value = "null", delval = "now()")
     private LocalDateTime deletedAt;
 }
